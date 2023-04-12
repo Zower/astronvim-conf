@@ -15,6 +15,7 @@ return {
       end,
       desc = "Pick to close",
     },
+    ["<leader>w"] = { "<cmd>w<cr>", desc = "Save" },
     ["j"] = {
       function() vim.lsp.buf.hover() end,
       desc = "Hover symbol details",
@@ -25,6 +26,10 @@ return {
     ["o"] = "l",
     ["s"] = "i",
     ["t"] = "o",
+    ["f"] = "e",
+    ["k"] = "f",
+    ["l"] = "n",
+    ["L"] = "N",
     ["h"] = { 
       function()
         require("leap").leap { offset = 1 }
@@ -40,19 +45,18 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
-    ["<leader>bh"] = {
+    ["<leader>wh"] = {
       "<cmd>split<cr>",
       desc = "Horizontal split buffer from tabline",
     },
-    ["<leader>bv"] = {
+    ["<leader>wv"] = {
       "<cmd>vsplit<cr>",
       desc = "Vertical split buffer from tabline",
     },
-    ["<leader>bn"] = { "<cmd>wincmd h<cr>", desc = "Move to left split" },
-    ["<leader>be"] = { "<cmd>wincmd j<cr>", desc = "Move to down split" },
-    ["<leader>bi"] = { "<cmd>wincmd k<cr>", desc = "Move to up split" },
-    ["<leader>bo"] = { "<cmd>wincmd l<cr>", desc = "Move to right split" },
-    ["<leader>bq"] = { "<cmd>close<cr>", desc = "Close window" },
+    ["<c-n>"] = { "<cmd>wincmd h<cr>", desc = "Move to left split" },
+    ["<c-e>"] = { "<cmd>wincmd j<cr>", desc = "Move to down split" },
+    ["<c-i>"] = { "<cmd>wincmd k<cr>", desc = "Move to up split" },
+    ["<c-o>"] = { "<cmd>wincmd l<cr>", desc = "Move to right split" },
     ["ga"] = {
       function() vim.lsp.buf.code_action() end,
       desc = "LSP code action",
@@ -89,6 +93,8 @@ return {
     ["e"] = "j",
     ["i"] = "k",
     ["o"] = "l",
+    ["f"] = "e",
+    ["k"] = "f",
     ["h"] = { 
       function()
         require("leap").leap { offset = 1 }
