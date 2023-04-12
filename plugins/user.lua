@@ -1,6 +1,9 @@
 return {
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
+  ["mason-lspconfig"] = {
+      ensure_installed = { "dartls" }, -- install dartls
+  },
   "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
@@ -34,11 +37,9 @@ return {
       'nvim-lua/plenary.nvim',
       'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
+    after = "mason-lspconfig.nvim",
     config = function() require("flutter-tools").setup {
       lsp = require('astronvim.utils.lsp').config("dartls"),
     } end,
-  },
-  ["mason-lspconfig"] = {
-      ensure_installed = { "dartls" }, -- install dartls
   },
 }
