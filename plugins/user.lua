@@ -15,8 +15,8 @@ return {
   {
     "ggandor/leap.nvim",
     config = function()
-      require('leap').opts.safe_labels = { 'h', 'f', 'l', 'u', 't' }
-      require('leap').opts.labels = { 'h', 'f', 'l', 'u', 't' }
+      require('leap').opts.safe_labels = { 'h', 'a', 'f', 'l', 'g', 'u', 't', 'k', 'z', }
+      require('leap').opts.labels = { 'h', 'a', 'f', 'l', 'g', 'u', 't', 'k', 'z' }
     end,
   },
   {
