@@ -25,8 +25,26 @@ return {
     virtual_text = true,
     underline = true,
   },
-
   lsp = {
+    servers = {
+      "dartls",
+    },
+    setup_handlers = {
+      -- add custom handler
+      dartls = function(_, opts) require("user.flutter-tools").setup { lsp = opts } end,
+    },
+    config = {
+      dartls = {
+        -- any changes you want to make to the LSP setup, for example
+        color = {
+          enabled = true,
+        },
+        settings = {
+          showTodos = true,
+          completeFunctionCalls = true,
+        },
+      },
+    },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
