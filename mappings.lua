@@ -8,7 +8,8 @@ return {
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
-    ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+    ["<leader>bn"] = { "<cmd>enew<cr>", desc = "New File" },
+    ["<leader>bt"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
         require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
@@ -52,6 +53,10 @@ return {
     ["<leader>wv"] = {
       "<cmd>vsplit<cr>",
       desc = "Vertical split buffer from tabline",
+    },
+    ["<leader>wq"] = {
+      "<cmd>close<cr>",
+      desc = "Close window",
     },
     ["<c-n>"] = { "<cmd>wincmd h<cr>", desc = "Move to left split" },
     ["<c-e>"] = { "<cmd>wincmd j<cr>", desc = "Move to down split" },

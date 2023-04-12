@@ -51,6 +51,17 @@ return {
     } end,
   },
   {
+    'zbirenbaum/copilot.lua',
+    lazy = false,
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          auto_trigger = true,
+        },
+      })
+    end,
+  },
+  {
     'nvim-neo-tree/neo-tree.nvim',
     opts = function()
       local global_commands = {
